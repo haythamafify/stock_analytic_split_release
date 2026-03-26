@@ -1,0 +1,77 @@
+<section style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;max-width:860px;margin:0 auto;color:#2c3e50;line-height:1.7;">
+
+  <!-- Banner -->
+  <div style="border-radius:12px;overflow:hidden;margin-bottom:32px;box-shadow:0 4px 20px rgba(0,0,0,0.15);">
+    <img src="banner.png" alt="Stock Analytic Distribution Banner" style="width:100%;display:block;"/>
+  </div>
+
+  <!-- Intro -->
+  <div style="background:linear-gradient(135deg,#1a5276 0%,#2980b9 100%);border-radius:10px;padding:28px 32px;color:white;margin-bottom:28px;">
+    <h2 style="margin:0 0 10px;font-size:1.5rem;font-weight:700;letter-spacing:.5px;">
+      📦 Stock Analytic Distribution
+    </h2>
+    <p style="margin:0;font-size:1.05rem;opacity:.92;">
+      Bring the power of analytic accounting directly to your stock transfers.
+      Split costs across multiple analytic accounts — the same way you do on invoices.
+    </p>
+  </div>
+
+  <!-- Features -->
+  <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">Key Features</h3>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;">
+    <div style="background:#eaf4fb;border-radius:8px;padding:16px 18px;border-left:3px solid #2980b9;">
+      <strong style="color:#1a5276;">🎯 Analytic Widget on Move Lines</strong><br/>
+      <span style="font-size:.92rem;">The native <code>analytic_distribution</code> widget appears on every product line in your transfer form — exactly like invoice lines.</span>
+    </div>
+    <div style="background:#eafaf1;border-radius:8px;padding:16px 18px;border-left:3px solid #27ae60;">
+      <strong style="color:#1d6a3a;">✅ Auto Analytic Lines on Validate</strong><br/>
+      <span style="font-size:.92rem;">When you validate a transfer, analytic lines are automatically created for each distribution percentage on every done move.</span>
+    </div>
+    <div style="background:#fef9e7;border-radius:8px;padding:16px 18px;border-left:3px solid #f39c12;">
+      <strong style="color:#7d6608;">🔗 Full Stock Traceability</strong><br/>
+      <span style="font-size:.92rem;">Analytic lines are linked back to <code>stock.move</code> and <code>stock.picking</code> for full operational traceability.</span>
+    </div>
+    <div style="background:#fdedec;border-radius:8px;padding:16px 18px;border-left:3px solid #e74c3c;">
+      <strong style="color:#922b21;">🌍 Arabic Translation Included</strong><br/>
+      <span style="font-size:.92rem;">Full Arabic <code>i18n/ar.po</code> translation ships out of the box for Middle East deployments.</span>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">How It Works</h3>
+  <ol style="padding-left:20px;margin-bottom:28px;">
+    <li style="margin-bottom:10px;"><strong>Open a Transfer</strong> — Go to <em>Inventory &gt; Operations &gt; Transfers</em>.</li>
+    <li style="margin-bottom:10px;"><strong>Set Analytic Distribution</strong> — On each product line, use the Analytic column to assign accounts and percentages.</li>
+    <li style="margin-bottom:10px;"><strong>Validate</strong> — Click Validate. Analytic lines are created automatically per distribution.</li>
+    <li><strong>Analyze</strong> — Review cost allocation in your Analytic Accounting reports.</li>
+  </ol>
+
+  <!-- Technical Notes -->
+  <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">Technical Notes</h3>
+  <ul style="padding-left:20px;margin-bottom:28px;font-size:.95rem;">
+    <li>Distribution stored as <strong>JSON</strong> in <code>stock.move.analytic_distribution</code>.</li>
+    <li>Cost source uses <code>stock_valuation_layer_ids.value</code> when available; falls back to <code>standard_price × qty</code>.</li>
+    <li>Duplicate distribution keys are skipped to prevent duplicate analytic lines.</li>
+    <li>Multi-plan analytic splits fully supported.</li>
+  </ul>
+
+  <!-- Dependencies -->
+  <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">Dependencies</h3>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;">
+    <span style="background:#1a5276;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">stock</span>
+    <span style="background:#2980b9;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">analytic</span>
+    <span style="background:#27ae60;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">stock_account</span>
+  </div>
+
+  <!-- Author -->
+  <div style="background:#f4f6f7;border-radius:10px;padding:20px 24px;border:1px solid #d5d8dc;">
+    <strong style="color:#1a5276;font-size:1rem;">👤 Author</strong><br/>
+    <span style="font-size:.95rem;">
+      <strong>Haytham Afify</strong> &nbsp;|&nbsp;
+      <a href="mailto:haythamgamal6@gmail.com" style="color:#2980b9;text-decoration:none;">haythamgamal6@gmail.com</a><br/>
+      <a href="https://github.com/haythamafify" style="color:#2980b9;text-decoration:none;">GitHub: github.com/haythamafify</a> &nbsp;|&nbsp;
+      <a href="https://linkedin.com/in/haytham-gamal-4165797a" style="color:#2980b9;text-decoration:none;">LinkedIn</a>
+    </span>
+  </div>
+
+</section>

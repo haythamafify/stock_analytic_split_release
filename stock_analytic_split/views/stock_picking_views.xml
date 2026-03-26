@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_picking_form_analytic_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.analytic.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='move_ids_without_package']//field[@name='product_uom_qty']"
+                   position="after">
+                <field name="analytic_distribution"
+                       widget="analytic_distribution"
+                       optional="show"
+                       string="Analytic"
+                       options="{'product_field': 'product_id', 'business_domain': 'stock'}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

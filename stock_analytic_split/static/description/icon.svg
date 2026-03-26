@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a5276;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e67e22;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#27ae60;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="100" height="100" rx="18" fill="url(#bg)"/>
+  <!-- Box/package icon at top -->
+  <g transform="translate(50,22)">
+    <polygon points="0,-11 13,0 13,13 0,22 -13,13 -13,0" fill="none" stroke="white" stroke-width="2.5" stroke-linejoin="round"/>
+    <polyline points="-13,0 0,11 13,0" fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="0" y1="11" x2="0" y2="22" stroke="white" stroke-width="2"/>
+  </g>
+  <!-- Analytic split bars -->
+  <rect x="16" y="68" width="13" height="18" rx="3" fill="url(#bar1)"/>
+  <rect x="34" y="58" width="13" height="28" rx="3" fill="url(#bar2)"/>
+  <rect x="52" y="63" width="13" height="23" rx="3" fill="url(#bar3)"/>
+  <rect x="70" y="54" width="13" height="32" rx="3" fill="url(#bar2)" opacity="0.7"/>
+  <!-- Divider line -->
+  <line x1="12" y1="88" x2="88" y2="88" stroke="white" stroke-width="1.5" opacity="0.4"/>
+</svg>
