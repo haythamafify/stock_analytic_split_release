@@ -1,6 +1,6 @@
 {
     'name': 'Stock Analytic Distribution',
-    'version': '18.0.2.0.0',
+    'version': '18.0.3.0.0',
     'category': 'Inventory/Inventory',
     'summary': 'Analytic distribution widget on stock move lines (like invoices)',
     'description': """
@@ -14,6 +14,8 @@ Features:
 - Same UX as account.move.line (invoices)  
 - Automatically creates analytic lines upon transfer validation
 - Arabic translation included
+- Header-level analytic distribution that propagates to all lines automatically
+- Per-line override still supported
     """,
     'author': 'Haytham Afify',
     'website': 'https://github.com/haythamafify',

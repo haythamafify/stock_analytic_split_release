@@ -7,6 +7,18 @@
         <field name="inherit_id" ref="stock.view_picking_form"/>
         <field name="arch" type="xml">
 
+            <!-- Header-level analytic distribution (applies to all lines) -->
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="analytic_distribution"
+                       widget="analytic_distribution"
+                       string="Default Analytic"
+                       options="{'business_domain': 'stock'}"
+                       help="Set once here and it will be applied to all lines automatically."
+                />
+                <field name="analytic_precision" invisible="1"/>
+            </xpath>
+
+            <!-- Per-line analytic distribution (for overrides) -->
             <xpath expr="//field[@name='move_ids_without_package']//field[@name='product_uom_qty']"
                    position="after">
                 <field name="analytic_distribution"

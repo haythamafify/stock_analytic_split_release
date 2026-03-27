@@ -36,3 +36,11 @@ msgstr "القيود التحليلية - %s"
 #: model:ir.ui.view,arch_db:stock_analytic_split.view_picking_form_analytic_inherit
 msgid "Analytic"
 msgstr "تحليلي"
+
+#. model:ir.model.fields,field_description:stock_analytic_split.field_stock_picking__analytic_distribution
+msgid "Default Analytic"
+msgstr "التوزيع التحليلي الافتراضي"
+
+#. model:ir.model.fields,help:stock_analytic_split.field_stock_picking__analytic_distribution
+msgid "Set once here and it will be applied to all lines automatically."
+msgstr "اختره مرة واحدة هنا وسيتم تطبيقه على جميع البنود تلقائياً."

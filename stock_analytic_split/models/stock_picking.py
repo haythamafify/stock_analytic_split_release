@@ -1,11 +1,35 @@
-from odoo import models, _
+from odoo import models, fields, api, _
 
 
 class StockPicking(models.Model):
     _inherit = 'stock.picking'
 
+    analytic_distribution = fields.Json(
+        string='Analytic Distribution',
+        help='Set a default analytic distribution for all lines. '
+             'It will be applied automatically to all move lines.',
+    )
+
+    analytic_precision = fields.Integer(
+        store=False,
+        default=lambda self: self.env['decimal.precision'].precision_get('Percentage Analytic'),
+    )
+
+    @api.onchange('analytic_distribution')
+    def _onchange_analytic_distribution(self):
+        """Propagate header analytic distribution to all move lines."""
+        for picking in self:
+            if picking.analytic_distribution:
+                for move in picking.move_ids:
+                    move.analytic_distribution = picking.analytic_distribution
+
     def button_validate(self):
         """Override to create analytic lines after validation."""
+        # Before validating, propagate header distribution to lines that have none
+        for picking in self:
+            if picking.analytic_distribution:
+                for move in picking.move_ids.filtered(lambda m: not m.analytic_distribution):
+                    move.analytic_distribution = picking.analytic_distribution
         result = super().button_validate()
         for picking in self:
             if picking.state == 'done':
