@@ -17,17 +17,18 @@
     <p style="margin:0;font-size:1.05rem;opacity:.92;">
       Bring the power of analytic accounting directly to your stock transfers.
       Split costs across multiple analytic accounts — the same way you do on invoices.
-      Now with a <strong>header-level Default Analytic</strong> that fills all lines at once.
+      Now with <strong>auto-sync from Purchase Orders and Sales Orders</strong> — analytic is pulled automatically from the source document.
     </p>
   </div>
 
-  <!-- NEW in v3 -->
+  <!-- NEW in v4 -->
   <div style="background:#eafaf1;border:2px solid #27ae60;border-radius:10px;padding:18px 24px;margin-bottom:28px;">
-    <h3 style="margin:0 0 8px;color:#1d6a3a;font-size:1.05rem;">🆕 New in v3 — Header Default Analytic</h3>
+    <h3 style="margin:0 0 8px;color:#1d6a3a;font-size:1.05rem;">🆕 New in v4 — Auto-Sync from PO / SO</h3>
     <p style="margin:0;font-size:.95rem;">
-      Set the analytic distribution <strong>once</strong> in the transfer header and it automatically applies to
-      <strong>all product lines</strong> — no need to repeat the same cost center on every line.
-      Per-line override is still fully supported for exceptions.
+      When a receipt or delivery is linked to a <strong>Purchase Order</strong> or <strong>Sales Order</strong>,
+      the analytic distribution is pulled <strong>automatically</strong> from each order line and applied to the matching stock move.
+      The field is <strong>locked</strong> to prevent manual override — ensuring data integrity.
+      For standalone transfers (no PO/SO), manual entry remains fully available.
     </p>
   </div>
 
@@ -39,45 +40,45 @@
       <span style="font-size:.92rem;">The native <code>analytic_distribution</code> widget appears on every product line in your transfer form — exactly like invoice lines.</span>
     </div>
     <div style="background:#eafaf1;border-radius:8px;padding:16px 18px;border-left:3px solid #27ae60;">
-      <strong style="color:#1d6a3a;">⚡ Header Default Analytic (NEW)</strong><br/>
-      <span style="font-size:.92rem;">Set the cost center once at the top of the transfer. All lines inherit it automatically — with per-line override still available.</span>
+      <strong style="color:#1d6a3a;">🔄 Auto-Sync from PO / SO Lines (NEW)</strong><br/>
+      <span style="font-size:.92rem;">Each stock move inherits the analytic from the matching PO or SO line automatically. Field is locked when linked to a source document.</span>
     </div>
     <div style="background:#fef9e7;border-radius:8px;padding:16px 18px;border-left:3px solid #f39c12;">
-      <strong style="color:#7d6608;">✅ Auto Analytic Lines on Validate</strong><br/>
-      <span style="font-size:.92rem;">When you validate a transfer, analytic lines are automatically created for each distribution percentage on every done move.</span>
+      <strong style="color:#7d6608;">✏️ Manual Entry for Standalone Transfers</strong><br/>
+      <span style="font-size:.92rem;">Internal transfers and receipts with no PO/SO remain fully editable — set cost center manually per line or via the header field.</span>
     </div>
     <div style="background:#fdedec;border-radius:8px;padding:16px 18px;border-left:3px solid #e74c3c;">
-      <strong style="color:#922b21;">🔗 Full Stock Traceability</strong><br/>
-      <span style="font-size:.92rem;">Analytic lines are linked back to <code>stock.move</code> and <code>stock.picking</code> for full operational traceability.</span>
+      <strong style="color:#922b21;">✅ Auto Analytic Lines on Validate</strong><br/>
+      <span style="font-size:.92rem;">When you validate a transfer, analytic lines are automatically created for each distribution percentage on every done move.</span>
     </div>
     <div style="background:#f5eef8;border-radius:8px;padding:16px 18px;border-left:3px solid #8e44ad;">
-      <strong style="color:#6c3483;">🌍 Arabic Translation Included</strong><br/>
-      <span style="font-size:.92rem;">Full Arabic <code>i18n/ar.po</code> translation ships out of the box for Middle East deployments.</span>
+      <strong style="color:#6c3483;">🔗 Full Stock Traceability</strong><br/>
+      <span style="font-size:.92rem;">Analytic lines are linked back to <code>stock.move</code> and <code>stock.picking</code> for full operational traceability.</span>
     </div>
     <div style="background:#eaf4fb;border-radius:8px;padding:16px 18px;border-left:3px solid #2980b9;">
-      <strong style="color:#1a5276;">📊 Multi-Plan Analytic Splits</strong><br/>
-      <span style="font-size:.92rem;">Supports multiple analytic plans and percentage splits across accounts simultaneously.</span>
+      <strong style="color:#1a5276;">🌍 Arabic Translation + Multi-Plan</strong><br/>
+      <span style="font-size:.92rem;">Full Arabic <code>i18n/ar.po</code> translation included. Supports multiple analytic plans and percentage splits simultaneously.</span>
     </div>
   </div>
 
   <!-- How it works -->
   <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">How It Works</h3>
   <ol style="padding-left:20px;margin-bottom:28px;">
-    <li style="margin-bottom:10px;"><strong>Open a Transfer</strong> — Go to <em>Inventory &gt; Operations &gt; Transfers</em>.</li>
-    <li style="margin-bottom:10px;"><strong>Set Default Analytic (Header)</strong> — Use the new <em>Default Analytic</em> field in the header to set the cost center once for all lines.</li>
-    <li style="margin-bottom:10px;"><strong>Override Per Line (Optional)</strong> — Use the Analytic column on any individual line to override the default for a specific product.</li>
+    <li style="margin-bottom:10px;"><strong>Set Analytic on PO/SO Line</strong> — In your Purchase Order or Sales Order, set the Analytic Distribution on each product line (requires Analytic Accounting enabled in Settings).</li>
+    <li style="margin-bottom:10px;"><strong>Confirm the Order</strong> — Odoo creates the linked receipt or delivery automatically.</li>
+    <li style="margin-bottom:10px;"><strong>Analytic Auto-Applied</strong> — Open the receipt/delivery and find the analytic already filled from the source document. Field is locked.</li>
     <li style="margin-bottom:10px;"><strong>Validate</strong> — Click Validate. Analytic lines are created automatically per distribution.</li>
-    <li><strong>Analyze</strong> — Review cost allocation in your Analytic Accounting reports.</li>
+    <li><strong>Standalone Transfers</strong> — For transfers without PO/SO, set the analytic manually on the header or per line and validate normally.</li>
   </ol>
 
   <!-- Technical Notes -->
   <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">Technical Notes</h3>
   <ul style="padding-left:20px;margin-bottom:28px;font-size:.95rem;">
+    <li>Auto-sync uses <code>stock.move.purchase_line_id</code> and <code>stock.move.sale_line_id</code> to match move → order line.</li>
+    <li>Works safely with or without <code>sale_stock</code> module installed — <code>sale_id</code> is checked dynamically.</li>
     <li>Header analytic stored as <strong>JSON</strong> in <code>stock.picking.analytic_distribution</code>.</li>
-    <li>Per-line analytic uses <code>stock.move.analytic_distribution</code> — same field as invoice lines.</li>
-    <li>Cost source uses <code>stock_valuation_layer_ids.value</code> when available; falls back to <code>standard_price × qty</code>.</li>
-    <li>Duplicate distribution keys are skipped to prevent duplicate analytic lines.</li>
-    <li>Multi-plan analytic splits fully supported.</li>
+    <li>Per-line analytic uses <code>stock.move.analytic_distribution</code>.</li>
+    <li>Cost source uses <code>stock_valuation_layer_ids.value</code>; falls back to <code>standard_price × qty</code>.</li>
     <li>Open Source — LGPL-3 license.</li>
   </ul>
 
@@ -87,12 +88,14 @@
     <span style="background:#1a5276;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">stock</span>
     <span style="background:#2980b9;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">analytic</span>
     <span style="background:#27ae60;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">stock_account</span>
+    <span style="background:#e67e22;color:white;padding:6px 16px;border-radius:20px;font-size:.88rem;">purchase_stock</span>
   </div>
 
   <!-- Changelog -->
   <h3 style="color:#1a5276;border-left:4px solid #f39c12;padding-left:12px;font-size:1.1rem;">Changelog</h3>
   <ul style="padding-left:20px;margin-bottom:28px;font-size:.93rem;">
-    <li><strong>v3.0.0</strong> — Added header-level Default Analytic field that propagates to all lines automatically. Per-line override still supported.</li>
+    <li><strong>v4.0.0</strong> — Auto-sync analytic from PO/SO lines to stock moves. Field locked when linked to source document. Safe detection of sale_stock module.</li>
+    <li><strong>v3.0.0</strong> — Header-level Default Analytic field that propagates to all lines automatically.</li>
     <li><strong>v2.0.0</strong> — Per-line analytic distribution widget with auto analytic line creation on validate.</li>
     <li><strong>v1.0.0</strong> — Initial release.</li>
   </ul>
